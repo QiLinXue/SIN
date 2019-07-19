@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <link rel="stylesheet" href="../styling/custom.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 12 | 2019 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2019 SIN Problem 12</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="11.html">Previous</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        For his float entry for the Oktoberfest parade,Onkel Hans builds a giant keg and fills it up with delicious draft beer. The keg is a cylinder of radius \(R=5\text{ m}\), and sits on a large carousel platform that spins about its central vertical axis. An inebriated baton twirler marching enxt to the float observes that, in its steady state, the surface of the beer is curved as a parabola. It is shallowest at the center of the keg and deepest at the edge. What must be the frequency of rotation be so that this difference in depth equals the radius of the keg? Answer in rad/sec. Hint: the slope of the function \(h(r)=r^2\) is \(2r\).
+        <br>
+        \(\textbf{(A) } 0.099 \qquad\textbf{(B) } 0.315 \qquad\textbf{(C) } 0.560 \qquad\textbf{(D) } 0.625 \qquad\textbf{(E) } 1.98 \)
+        </p>
+        <img src="imgs/12.PNG" width="20%"><br>
+        <h1 class="display-6">Solution</h1>
+        <p>
+        First, determine the equation of the parabola. Let the vertex be centered at the origin and we have \(h(5)=5=k(5)^2\). Solving gives \(k=\frac{1}{5}\) such that the equation of the curve is represented by \(h(r)=\frac{1}{5}r^2\) <br><br>
+
+        In the free body diagram shown below, we draw the forces for an arbitrary water molecule at a horizontal distance \(r=a\) away from the origin. We wish to sum up the forces in the vertical and horizontal components, but first we need to determine \(\theta\).
+        <center><img src="imgs/12a.PNG" width="20%"></center>
+
+        Since the slope at \(r=a\) is \(\frac{2}{5}a\), the slope of the perpendicular normal force is \(\frac{-1}{0.4a}\) and therefore: $$\theta = \tan^{-1}\left(\frac{1}{0.4a}\right)$$
+
+        Summing up the forces in the y- and x- direction gives:
+        \begin{align*}
+        N\sin\left(\frac{1}{0.4a}\right) &= mg & (1)\\
+        N\cos\left(\frac{1}{0.4a}\right) &= m\omega^2 a & (2)
+        \end{align*}
+
+        Taking the ratio \(\frac{(1)}{(2)}\) gives:
+        \begin{align*}
+        \tan\left(\tan^{-1}\left(\frac{1}{0.4a}\right)\right) &= \frac{mg}{m\omega^2 a} \\
+        \frac{1}{0.4a} &= \frac{g}{\omega^2 a} \\
+        \omega &= \sqrt{0.4(9.8)} \\
+        \end{align*}
+
+        Evaluating gives \(\boxed{\textbf{(E) } 1.98}\)
+        </p>
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+            <li>Why exactly does the water make a parabolic shape? It can be shown (with quite some work) that a loose hanging chain actually takes the shape of a hyperbolic cosine curve so why should fluids be any different? In fact, by looking at pressure variations it can be shown that the surface of the water in a rotating cylinder follows the curve \(y=\frac{\omega^2r^2}{2g}\) See <a href="https://archive.org/details/KraneResnickAndHallidayPhysics5thEd.Vol.1/page/n363">Physics 5th edition by HRK pg 351</a> for more details on how to approach this problem.</li>
+        </ul>
+        <h1 class="display-6">Similar Problems</h1>
+        <ul>
+            <li><a href="5.html">2019 Q5</a></li>
+        </ul>
+
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <link rel="stylesheet" href="../styling/custom.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 8 | 2019 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2019 SIN Problem 8</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="7.html">Previous</a> | <a href="9.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        The coach of the Toronto Maple Laughs, Mike Blabcock, is devising new dry-land training for the off-season consisting of a frictionless straight slide. Mike (mass \(75 \text{ kg}\)) fixes the slide (length \(2\text{ m}\), mass \(120\text{ kg}\)) to slid ground and slides down, reaching the end of it in \(1.5\text{ s}\). He then places the slide on a frictionless ice rink where it can slide horizontally, and places the Laughs' Captain (mass \(82 \text{ kg}\)) at the top. Just as he is about to begin to slide down, Mike pushes the slide horizontally with a constant continuous force F. He observes that the Captain takes \(4 \text{ s}\) to reach the bottom. How far does the slide move on the ice horizontally? Answer in \(m\).<br>
+        \(\textbf{(A) } 4.20 \qquad\textbf{(B) } 6.24 \qquad\textbf{(C) } 8.68 \qquad\textbf{(D) } 10.4 \qquad\textbf{(E) } 12.4 \)
+        </p>
+        <img src="imgs/8.PNG" width="20%"><br>
+        <h1 class="display-6">Solution</h1>
+        <p>
+        First, let us get some important properties of the inclined plane using the first scenario. To find the incline angle \(\theta\), we first need to determine the acceleration using the equation \(\Delta d = v_it+\frac{1}{2}at^2\). Substituting \(d=2\), \(t=1.5\), and \(v_i=0\) gives:
+        $$a = \frac{2(2)}{1.5^2} = 1.778$$
+
+        The acceleration due to gravity along the ramp is given by \(a=g\sin(\theta)\) Equating it with the acceleration found earlier gives
+        $$\theta = \sin^{-1}\left(\frac{1.778}{9.81}\right) = 10.45^\circ$$
+
+        Drawing the free body diagram for the person and plane system and setting the coordinate axes to be parallel and perpendicular to the ground: <br>
+        <center><img src="imgs/8a.PNG" width="30%"></center>
+
+        Let the mass of the person be \(m\) and the mass of the plane be \(M\). Then \(F=ma\) in the x and y direction for the person gives:
+        \begin{align*}
+        ma_y &= mg - N\cos\theta & (1)\\
+        ma_x &= N\sin\theta & (2)\\
+        \end{align*}
+        </p>
+
+        That's a lot of unknowns! Perhaps we can use some of the information we haven't used yet. The height of the plane is \(2\sin (10.45) = 0.363\) and the time it took to slide down the second time was \(4\) seconds. Using the equation: \(\Delta d = v_it + \frac{1}{2}a_yt^2\) we get: $$a_y = \frac{2(0.363)}{4^2} = 0.0454$$
+
+        Plugging this into equation \((1)\) can be used to solve for the normal force: $$N = \frac{mg - ma_y}{\cos\theta} = \frac{(82)(9.8-0.0454)}{\cos(10.45)}=813.37$$
+
+        which can be plugged into equation \((2)\) to solve for the horizontal acceleration:
+
+        $$a_x = \frac{N\sin\theta}{m} = \frac{(813.37)\sin(10.45)}{82} = 1.799$$
+
+        Therefore, in the span of four seconds, the person travels a distance of \(\Delta d = \frac{1}{2}(1.799)(4)^2 = 14.392 \text{ m}\). However, this is not the distance the plane travelled, because the person started at the left end and ended at the right end. Thus, the person went the distance the ramp travelled plus the horizontal length of the ramp. Or mathematically:
+
+        $$\Delta d_\text{person relative ground} = \Delta d_\text{person relative ramp} + \Delta d_\text{ramp relative ground}$$
+
+        We know that \(\Delta d_\text{person relative ramp} = 2\cos(10.45) = 1.967 \) so the distance the ramp travelled was \(14.392-1.967=\boxed{\textbf{(E) }12.4}\).
+        </p>
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+            <li>There are several harder ways to do this problem. If we write down \(F=ma\) for the ramp, we can explicitly solve for the acceleration of the ramp \(A_y\) by relating it to the acceleration of the person. Since the person needs to stay on the inclined plane, the horizontal distance between the person and its starting point on the plane is \(\frac{1}{2}(a_x-A_x)t^2\), and the vertical distance is \(\frac{1}{2}a_yt^2\). The ratio of these distances must equal \(\tan\theta\) if the person is to remain on the plane. Therefore: $$\frac{a_y}{a_x-A_x}=\tan\theta \to \frac{0.0454}{1.799-A_x}=0.18449$$ and solving yields \(A_x=1.553\) which can directly be plugged in \(d=\frac{1}{2}at^2\) to get the right answer. This is an important technique that comes up in many problems where the "trick" isn't so easy to spot. 
+            </li>
+            <li>
+            Perhaps an even more absurd way to solve the problem is to derive the equations of motion in generalized coordinates with Lagrangian Mechanics. The external force \(F\) can be represented by a constantly decreasing potential \(-Ft\). Write the Lagrangian \(L=KE-PE\) for both objects. Then:
+            $$\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{x}}\right)-\left(\frac{\partial L}{\partial x}\right) = 0$$
+            where \(\dot{x}\) represents the velocity. This may seem absurdly unnecessary and you'll be completely right! However for harder problems (beyond the scope of SIN) that are only a slight modification of this one (see similar problems), this technique is extremely powerful.
+            </li>
+        </ul>
+        <h1 class="display-6">Similar Problems</h1>
+        <ul>
+          <li>
+          A block of mass \(m\) is placed on a frictionless plane of mass \(M\) that can slide freely on a frictionless table. What are the equations of motion for both the mass and the plane? See the Lagrangian solution <a href="https://www.youtube.com/watch?v=rwB-Yb7Jqvc">here</a> and see the Newtonian solution (harder) <a href="https://www.youtube.com/watch?v=xuXwWjbnVPg" >here</a>. For extra reading, refer to David Morin's <a href="https://www.amazon.ca/Introduction-Classical-Mechanics-Problems-Solutions/dp/0521876222">Introduction to Classical Mechanics</a>.
+          </li>
+        </ul>
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

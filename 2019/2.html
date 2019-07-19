@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 2 | 2019 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2019 SIN Problem 2</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="1.html">Previous</a> | <a href="3.html">Next</a>
+            </p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        A rebellious faction of Newfoundlanders is determined to secede from Confederation. They fire a flaming bag of moose droppings (mass \(20 \text{ kg}\)) across the Gulf of St. Lawrence toward the mainland at an angle of \(60\) degrees with a muzzle velocity of \(100 \text{ m/s}\). Immediately after the cannon fires, the Royal Newfoundland Constabulary seizes it back from the rebels. Hoping to douse the flames, they load the cannon with a water balloon (mass \(8\text{ kg}\)) and change the launch angle to \(30\) degrees. How long after the first projectile was fired must the Constabulary launch the balloon such that they collide mid-air? The muzzle velocity of the water is \(80 \text{ m/s}\). Answer in seconds. <br>
+        \(\textbf{(A) } 6.84 \qquad\textbf{(B) } 24.6 \qquad\textbf{(C) } 67.1 \qquad\textbf{(D) } 241 \qquad\textbf{(E) } \text{The moose doo unavoidably hits the ground.}\)
+        </p>
+        <img src="imgs/2.PNG" width="20%">
+        <h1 class="display-6">Solution 1</h1>
+        <p>
+        Let us attempt to visualize the physical trajectories \(y(x)\) of both objects by using standard kinematic equations and breaking up the motion into its vertical and horizontal components. <br><br>
+
+        For the moose droppings, the position as a function of time can be represented as:
+        \begin{align*}
+        y &= 100\sin(60)t - 4.9t^2 \\
+        x &= 100\cos(60)t
+        \end{align*}
+        Rearranging the second equation as \(t=\frac{100\cos(60)}{x}\) and substituting the expression for \(t\) into the first equation gives:
+        $$y=\tan(60)x - \frac{4.9x^2}{100^2\cos^2(60)} \approx 1.7x - 0.002x^2$$
+
+        Using a similar process, we can determine the equation of the physical trajectory for the water balloon. As before, the position as a function of time is represented as:
+        \begin{align*}
+        y &= 80\sin(30)t - 4.9t^2 \\
+        x &= 80\cos(30)t
+        \end{align*}
+        Rearranging the second equation as \(t=\frac{80\cos(30)}{x}\) and substituting the expression for \(t\) into the first equation gives:
+        $$y=\tan(30)x - \frac{4.9x^2}{80^2\cos^2(30)} \approx 0.58x - 0.001x^2$$
+        Setting these two expressions for the position equal to each other gives the intersection point at which the two objects collide. Solving \(1.7x - 0.002x^2 = 0.58x - 0.001x^2\) gives \((x,y)=(1120,-605)\). Since the physical paths do not intersect above the x-axis, then it is impossible for them to collide. Thus, \(\boxed{\textbf{(E) }\text{the moose doo unavoidably hits the ground}}\)
+        </p>
+        <h1 class="display-6">Solution 2</h1>
+        Perhaps we can solve this problem by eliminating some answer choices. When do the moose droppings hit the floor? The height of the moose droppings is given by the equation $$y=100\sin(60)t-4.9t^2 \approx 86.6t-4.9t^2$$ Setting this to zero gives \(t=17.67\text{ sec}\). The only options this leaves is \(\textbf{(A) } 6.84\) and \(\textbf{(E) }\text{the moose doo unavoidably hits the ground}\). Let us try to test out option \(\textbf{(A)}\) by hand. <br><br>
+        The equations of motion of the two objects in the x-direction are given below:
+        \begin{align*}
+        x_\text{moose droppings} &= 100\cos(60)t \\
+        x_\text{water balloon} &= 80\cos(30)(t-6.84) \\
+        \end{align*}
+        Setting them equal gives:
+        \begin{align*}
+        100\cos(60)t &= 80\cos(30)(t-6.84) \\
+        50t &= 69.28t - 473.8752 \\
+        t &= 24.58
+        \end{align*}
+        However, we have already established that \(t \le 17.67\) so option \(\textbf{(A)}\) is wrong. By process of elimination \(\boxed{\textbf{(E) }\text{the moose doo unavoidably hits the ground}}\).
+        <h1 class="display-6">Solution 3 (Video)</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZRYxpmH25VA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+            <li>The mass is given in this problem, but without air resistance an object's projectile motion is independent of the mass so this information is only given to throw students off.</a></li>
+        </ul>
+
+        <h1 class="display-6">Similar Problems</h1>
+        <p>There are no similar problems at the time.</p>
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

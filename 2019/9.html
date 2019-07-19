@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <link rel="stylesheet" href="../styling/custom.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 9 | 2019 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2019 SIN Problem 9</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="8.html">Previous</a> | <a href="10.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        A year ago, Rohan (\(A\)) and Donna (\(B\)) shone two parallel laser beams onto a semi-cylindrical crystal ball. They gazed into the crystal ball, in an attempt to predict the 2018 Nobel Prize winner. The curved surface of the crystal ball (\(n=1.5\) has radius \(R=50\text{ cm}\), and sits on an optical table in Donna's lab. Rohan observes that the two laser beams converge precisely at a point \(C\) as illustrated. What is the distance \(h\)? Answer in cm.<br>
+        \(\textbf{(A) } 75 \qquad\textbf{(B) } 86 \qquad\textbf{(C) } 97 \qquad\textbf{(D) } 108 \qquad\textbf{(E) } 114 \)
+        </p>
+        <img src="imgs/9.PNG" width="20%"><br>
+        <h1 class="display-6">Solution</h1>
+        <p>
+        Using Snell's law, the angle that ray \(B\) enters the crystal is identical to the angle ray \(B\) makes after it eits the crystal (which is \(30^\circ\)). See the remarks for details. <br>
+
+        To calculate the angle ray \(A\) makes with the normal after it exits the crystal, we can apply Snell's law. The index of refraction of air is \(1\) so using \(n_1\sin\theta_1=n_2\sin\theta_2\) we get: $$(1.5)(\sin30) = (1)(\sin\theta)$$
+
+        Solving gives \(\theta=48.59^\circ\). See the following diagram with labelled points and angles:<br>
+        <center><img src="imgs/9a.PNG" width="50%"></center><br>
+
+        To determine the length \(DE\) we first need to determine the angle ray \(B\) makes right after it enters the crystal (\(\theta_1\)). Using Snell's Law once again, we have: $$(1)(\sin 30)=(1.5)(\sin\theta_1)$$ Solving gives \(\theta_1=19.47\) and using trig ratios we get: \(\tan\theta_1 = \frac{DE}{R}\). Substituting for \(\theta_1\) and \(R\) and solving gives \(DE=0.18\). <br><br>
+
+        Next, determine the length \(DC\). Using the law of sines, we get: $$\frac{DE}{\sin C} = \frac{DC}{\sin E}$$ Substituting the appropriate values yields \(DC = \sin(120) \cdot \frac{0.18}{\sin (18.59)} = 0.48\)
+
+        We can determine the vertical length from \(C\) to the middle of the crystal. Let us call this length \(z\). We have our trigonometric ratio \(\sin(48.59) = \frac{z}{0.48}\) or \(z=0.359\) <br><br>
+
+        The question wants the height \(h\) so we add \(R=0.5\) to get \(h= R + z = 0.5 + 0.359 = 0.86\). Converting meters to centimeters arrives at \(\boxed{\textbf{(B) } 86}\)
+        </p>
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+            <li>At the point in which \(B\) enters the crystal, the edge behaves very closely like a straight line parallel to the other side. When a beam of light travels through a lens where both sides are parallel to each other, then the angle of the light before it enters will be the same as the angle of the light after it exits. To prove this, let the index of refraction of the fluid outside and the lens be \(n_1\) and \(n_2\), respectively. The light makes an angle \(\theta_1\) with the normal line before entering and an angle \(\theta_2\) with the normal line right after entering which it will maintain until it exits with an angle \(\theta_3\). Snell's Law for the "entering" and "exiting" phase gives:
+            \begin{align*}
+            n_1\sin\theta_1 &= n_2\sin\theta_2 & (1)\\
+            n_2\sin\theta_2 &= n_1\sin\theta_3 & (2)\\
+            \end{align*}
+            Letting \((1)=(2)\) gives \(n_1\sin\theta_1 = n_1\sin\theta_3\) which can be shown very trivially that indeed \(\theta_1 = \theta_3 \) is always valid. One may think there be another solution where \(\theta_3=180-\theta_1\). Why isn't this valid?
+            </li>
+        </ul>
+
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

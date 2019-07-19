@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 4 | 2019 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2019 SIN Problem 4</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="3.html">Previous</a> | <a href="5.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        Zizzer Zazzer Zuzz (also known as Z3) is picking tired turtles from a tuttle tuttle tree. The turtles are spaced throughout the tree, and Z3 (mass \(60 \text{ kg}\)) jumps on a trampoline with spring constant \(k = 300 \text{ N/M}\). He picks up one turtle (\(10\text{ kg}\) each) at the peak of each jump, and then drops the turtle on the ground at the bottom of each jump when he is instantaneously at rest. If the height of Z3's first jump is observed to be \(2\text{ m}\), what is the maximum height of his fifth jump? Answer in metres. <br>
+        \(\textbf{(A) } 2.00 \qquad\textbf{(B) } 3.71 \qquad\textbf{(C) } 7.10 \qquad\textbf{(D) } 14.3 \qquad\textbf{(E) } 27.1 \)
+        </p>
+        <img src="imgs/4.PNG" width="20%">
+        <h1 class="display-6">Solution 1</h1>
+        <p>
+        Let the mass of Z3 be \(M\) and the mass of a turtle be \(m\). Consider the \(N^\text{th}\) jump. Conservation of energy at the peaks of the \(N^\text{th}\) jump and the \((N+1)^\text{th}\) jump gives: $$(m+M)gh_N = Mgh_{N+1}$$
+
+        Rearranging and solving for \(h_{n+1}\) gives the recursive statement: $$h_{N+1} = \frac{M+m}{M}\cdot h_N \to h_{N+1} = \frac{7}{6}h_{N}$$
+
+        Using the fact that \(h_1=2\) we can recursively solve for \(h_{5}\) to be \(2\cdot \left(\frac{7}{6}\right)^4 = \boxed{\textbf{(B) }3.71}\)
+        </p>
+
+        <h1 class="display-6">Solution 2 (Video)</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/aHxlX61xhmg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+            <li>The spring constant is given but not used in the solution. Why?</a></li>
+        </ul>
+
+        <h1 class="display-6">Similar Problems</h1>
+        <p>There are no similar problems at the time.</p>
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

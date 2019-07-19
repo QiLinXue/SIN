@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 7 | 2019 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2019 SIN Problem 7</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="6.html">Previous</a> | <a href="8.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        A farmer is pulling a \(110\text{ kg}\) wagon full of prairie oysters up a hill. Suddenly, the wagon breaks loose, and starts rolling downhill on its massless frictionless wheels. After it has covered \(11\text{ m}\) its speed is \(4\text{ m/s}\). The farmer's wife (mass \(72\text{ kg}\)) gives chase, jumping onto the wagon platform when i t has moved a total distance of \(13\text{ m}\). Her speed when she jumps on is \(8\text{ m/s}\) relative to the wagon. Her intent is to save the delicious treats, but she ends up sliding all the way down the wagon, and off the other end. If her speed relative to the wagon at the moment she slides off is \(7\text{ m/s}\), what is her speed relative to the ground? Answer in \(\text{m/s}\).<br>
+        \(\textbf{(A) } 11.0 \qquad\textbf{(B) } 11.6 \qquad\textbf{(C) } 12.0 \qquad\textbf{(D) } 12.4 \qquad\textbf{(E) } 13.1 \)
+        </p>
+        <img src="imgs/7.PNG" width="20%">
+        <h1 class="display-6">Solution</h1>
+        <p>
+        There are many parts to this problem, so let us do them one by one. <br><br>
+
+        First, determine the acceleration the wagon experiences on the inclined surface. Using the equation \(v_f^2=v_i^2+2ad\) and plugging in \(d=11\), \(v_f=4\), and \(v_i=0\) gives: $$a = \frac{4^2}{2\cdot11} = 0.727$$
+
+        Next, determine the speed of the wagon right before the wife jumps on the wagon using the same equation. Plugging in \(d=13\) and \(a=0.727\) gives: $$v_f=\sqrt{0+2(0.737)(13)}=4.348$$
+
+        Now, determine the time it took for the wife to slide off the wagon. Because she experiences uniform acceleration, the same equation used in the previous two paragraphs can be used to get her acceleration with respect to the wagon. Plugging in \(v_f=7\), \(v_i=8\), \(d=3\) gives: $$7^2=8^2+2(3)a \to a = -2.5$$
+
+        To get the time it takes for her to get off the wagon, we can use the equation \(v_f=v_i+at\) which gives: $$7=8-2.5t \to t=0.4$$
+
+        This is all to set up the problem. The real clutch is that when the farmer's wife is on the wagon, you can treat them as one object where we only care abut the motion of its <strong>center of mass</strong>. The speed of the center of mass of a system that has \(m_1\) and \(m_2\) is: $$v_\text{cm}=\frac{m_1v_1+m_2v_2}{m_1+m_2}$$
+        
+        If we treat the wife and the wagon as a single object, then this object only has one force affecting its motion: the force of gravity along the ramp. (Note that we already shown that this force along the ramp gives an acceleration of \(0.727\text{ m/s}^2\)). Then we can use the kinematic relationship \(v_f=v_i+at\) on the motion of the center of mass. Let the final speed of the wagon be \(v\) and the mass \(m_1\). Let the speed of the wife with respect to the ground be \(7+v\) and the mass \(m_2\). We therefore have:
+        $$\frac{m_1(v+7)+m_2v}{m_1+m_2} = \frac{m_1v_1+m_2v_2}{m_1+m_2} + at$$
+
+        Plugging in the numbers give:
+        $$\frac{72(v+7)+110v}{72+110} = \frac{(72)(8+4.348)+(110)(4.348)}{72+110} + (0.727)(0.4)$$
+
+        Solving the equation yields \(v=5.034\). Therefore, the speed of the farmer relative to the ground is \(v=7+5.034=\boxed{\textbf{(C) }12.0}\)
+        </p>
+
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+            <li>Although there was friction between the wife and the wagon, Newton's third law states that those are equal and opposite forces. Thus, they act as internal forces cancelling them out, not affecting the motion of the center of mass.</li>
+        </ul>
+
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

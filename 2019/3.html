@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 3 | 2019 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2019 SIN Problem 3</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="2.html">Previous</a> | <a href="4.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        In the year 2059, his Majesty King Harry builds an electrified fence around the last bastion of freedom in the world: he Dominion of Canada. The fence is a square grid of wire of constant resistance per unit length. \(A\) section of the grid is equipped with ammeters that measure a current flow of constant magnitude \(I\), but different directions as illustrated. At a later time, Harry notices that two of the amneters, \(A\) and B, have registered a change in their current direction from "up" to "down". From this observation, what is the minimum number of other ammeters that must register a change in direction? <br>
+        \(\textbf{(A) } 0 \qquad\textbf{(B) } 1 \qquad\textbf{(C) } 2 \qquad\textbf{(D) } 3 \qquad\textbf{(E) } \text{All other ammeters must register a change in direction.} \)
+        </p>
+        <img src="imgs/3.PNG" width="20%">
+        <h1 class="display-6">Solution</h1>
+        <p>
+        Since all the ammeters measure the same current \(I\), the net current going in this grid is \(0\). Since the current at \(A\) is originally going out the grid and the current at \(B\) is originally going in the grid, if their currents are flipped the net current in would still be \(0\). So you could probably guess a minimum of \(\boxed{\textbf{(A) }0}\) ammeters are needed. <br><br>
+
+        However, to prove this, let us first assume that a grid with the current ammeter setup is possible. We then propose that if there is a continuous piece of wire that has a current that continuously flows from point \(A\) to point \(B\), then the current in that section will flip once the currents in \(A\) and \(B\) flip. <br><br>
+
+        To prove this statement, consider the case if such a wire exists. When \(A\) flips, the first segment of this wire will flip in order to maintain a net current of \(0\) going through this junction. Similarly, the next segment of this wire will flip and this will continue until the last segment flips. Since this last segment is connected to \(B\) and they both flip, the net flux through this last junction is also zero. <br><br>
+
+        Now, to prove that such a wire exists, we will prove through contradiction. Suppose such a wire does not exist. Then, any path going from \(A\) will either form a closed loop or it will go out of the grid. We will first show that it is impossible to form a closed loop, where the current is facing the same direction. Kirchoff's second law says that in a closed loop, the sum of potential losses/gains must be zero. However, if the current faces the same way, then \(V=IR\) will yield a nonzero sum. <br><br>
+        
+        Next we will show that there is at least one path that does not go out of the grid. At all the edge nodes, there will be at least one wire that will not take the current out of the grid. The only exception is the bottom left corner that can act as a "vacuum" taking away all the current that enters the intersection away from the grid. We shall show that not all the current from \(B\) will enter this vacuum by collapsing the grid into a smaller grid. The bottom left horizontal wire must have a current going in the left direction and the top left horizontal wire must have a current going in the right direction. Let the wires in between these two wires represent the new left edge. In this new grid, there are no such vacuums and thus there must be some current that starts from \(B\) that ends up in \(A\) proving the statement.
+        </p>
+
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+            <li>Although this is a multiple choice question, on the actual exam solutions will be marked if your score is high enough. Make sure to include at least some justification if you think the answer is \(0\) but cannot formally prove it.</li>
+            <li>Even if you aren’t convinced it's (A), by this point, you can eliminate option C and E since the currents flipped must be an even integer and it probably won’t be B either so it would be mathematically intelligent to guess one of the other options. (Expected outcome is 1.5 points)</a></li>
+        </ul>
+
+        <h1 class="display-6">Similar Problems</h1>
+        <p>There are no similar problems at the time.</p>
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

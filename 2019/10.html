@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <link rel="stylesheet" href="../styling/custom.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 10 | 2019 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2019 SIN Problem 10</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="9.html">Previous</a> | <a href="11.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        In honour of Chinese New Year, Trudeau makes a batch of maple syrup flavoured tangyuan in the kitchen of Parliament. Sliding together on the frictionless table, the dumplings coagulate into one huge sticky ball of mass \(230\text{ g}\). Fustrated, Tredeau throws the ball, so it strikes horizontally with speed \(v\), and sticks to the tray of akitchen scale lying on its side on the table. The tray has mass \(120\text{ g}\), and is attached via a massless spring to a base of mass \(50\text{ g}\), which is at rest against a vertical wall as illustrated. After contact with the tangyuan, the spring reaches maximum compression, and then maximum extension, and then compresses again. When the spring is fully compressed again for the second time, the speed of the base is \(1.2\text{ m/s}\). If the spring constant is \(k=170\text{ N/m}\), how much is the spring compressed at that point? Answer in cm.
+        <br>
+        \(\textbf{(A) } 2.2 \qquad\textbf{(B) } 3.1 \qquad\textbf{(C) } 5.0 \qquad\textbf{(D) } 5.8 \qquad\textbf{(E) } 6.2 \)
+        </p>
+        <img src="imgs/10.PNG" width="20%"><br>
+        <h1 class="display-6">Solution</h1>
+        <p>
+        The trick in this problem is that the center of mass at the point of final compression is \(1.2\) because both the base and the tray stuck to the tangyuan is moving at this speed. See the remarks for an explanation of why.
+
+        A big implication of this is that right after the tray leaves contact with the wall, there are no more external forces. This means that the speed of the center of mass from this point forward will always remain to be \(1.2\). Using this knowledge, we can find the speed \(V\) of the larger mass as it stretches out (the first time) and at the point where the spring is neutral. At this point, the base feels no normal force from the wall and its speed is \(0\). Using the speed of center of mass equation: $$\frac{MV+mv}{M+m} = \frac{0.35V}{0.35+0.05} = 1.2$$
+        
+        where \(m\) is the mass of the left base and \(M\) is the mass of the right object (tray + tangyuan). After solving, we get \(V=1.371\). Then using conservation of energy relating when the system is at this position and when the system is at maximum compression the second time, we get: $$\frac{1}{2}MV^2 = \frac{1}{2}(M+m)v^2 + \frac{1}{2}kx^2 $$
+
+        Substituting the appropriate values gives: $$x^2 = \frac{(0.35)(1.371)^2-(0.35+0.05)(1.2)^2}{170} = 0.00047961$$
+
+        Taking the square root yields \(x=0.0219\). Therefore, the maximum compression is \(\boxed{\textbf{(A) } 2.2}\)
+        </p>
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+            <li>
+                When two objects are connected by a spring, they will be moving at the same speed when the spring achieves maximum compression. This is trivial to prove by looking at the frame of one of the objects \(A\). \(A\) will see itself as stationary and the other object \(B\) as experiencing a force of \(F=-kx\). At maximum compression, \(A\) will see that \(B\) is stationary. However, since \(A\) is moving in the lab frame, then \(B\) will also be moving in the lab frame at the same velocity.
+            </li>
+        </ul>
+        <h1 class="display-6">Similar Problems</h1>
+        <ul>
+            <li><a href="7.html">2019 Q7</a></li>
+            <li>Consider the general problem where a mass has two springs on opposing sides, one connecting to the wall and another connecting to another mass. Find the most general solution.</li>
+            <ul><li>Coupled Oscillators are beyond the scope of SIN, but by writing out two differential equations you can solve the system quite nicely using a variety of techniques. I plan on doing a full write-up eventually.</li></ul>
+        </ul>
+
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 2 | 2016 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2016 SIN Problem 2</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="1.html">Previous</a> | <a href="3.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        Upset with the new government's delay in building oil pipelines, former Prime Minister Harper vows to single-handedly deliver oil from Fort McMurray to southern refineries with his old snowmobile. During one frigid Canadian evening, his snowmobile battery begins behaving strangely, so he constructs the circuit below to test it. The battery generates a constant current \(I_0\), and the resistances are \(R_1=R_3=R\), \(R_2=3R\), and \(R_4=2R\). If an ammeter with negligible resistance is inserted as shown between the four resistors, what is the current measured by the ammeter when \(I_0=360\text{ mA}\)? Answer in \(\text{mA}\)
+        \(\textbf{(A) } 0 \qquad\textbf{(B) }15 \qquad\textbf{(C) } 30 \qquad\textbf{(D) } 720 \qquad\textbf{(E) } \text{None of these}\)
+        </p>
+        <img src="imgs/2.PNG" width="40%">
+        <h1 class="display-6">Solution</h1>
+        <p>
+        See the labelled circuit above. We have two resistors in parallel connected in series to another two resistors in parallel. The equivalent resistance is thus:
+        \begin{align*}
+        R_{eq} &= \left(\frac{1}{R_1}+\frac{1}{R_2}\right)^{-1}+\left(\frac{1}{R_3}+\frac{1}{R_4}\right)^{-1} \\
+               &= \left(\frac{1}{R}+\frac{1}{3R}\right)^{-1}+\left(\frac{1}{R}+\frac{1}{2R}\right)^{-1} \\
+               &= \frac{3R}{4} + \frac{2R}{3}\\
+               &= \frac{17R}{12}
+        \end{align*}
+
+        Applying Kirchoff's Second Law to the first labelled loop, we get:
+        \begin{align*}
+        0 &= R_1I_1 - R_2I_2 \\
+          &= RI_1 - 3RI_2 \\
+        I_1 &= 3I_2  \\
+        I_1 &= 3(360-I_1) \\
+        I_1 &= 270
+        \end{align*}
+
+        Applying Kirchoff's Second Law to thesecond labelled loop and letting \(I_5=I_2+I_4\), we get:
+        \begin{align*}
+        0 &= R_3I_3 - R_4I_5 \\
+          &= RI_3 - 2RI_5 \\
+        I_3 &= 2I_5  \\
+        I_3 &= 5(240-I_1) \\
+        I_3 &= 240
+        \end{align*}
+        </p>
+
+        Since \(I_4+I_3=I_1\) we can substitute in values to get: $$I_4=270-240=\boxed{\textbf{(C) }30}$$
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 1 | 2016 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2016 SIN Problem 1</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="2.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        All grown up, Little Willie (now Big Will) works for the Canadian centrla bank. Looking to find other uses for the sagging loonie, Big Will proposes a new system of units, in which all physical quantities are measured in Canadian dollars (CAD). Based on his yearly salary, Big Will sets \(1\) year = \(50,000\) CAD. Based on the mass of the loonie coin, he sets \(6.27\) grams = \(1\) CAD. Finally, based on the cost of his daily cab ride to work, he sets \(10\) km = \(20\) CAD. What is Big Will's weight in the new units, if his mass in the ordinary SI units is \(80 \) kg? 
+        \(\textbf{(A) } 1.28 \times 10^3 \text{ CAD} \qquad\textbf{(B) } 4.98\times 10^5 \text{ CAD}^{-1} \qquad\textbf{(C) } 4.98\times 10^5\qquad\textbf{(D) } 9.96\times 10^5 \text{ CAD} \qquad\textbf{(E) } 9.96\times 10^5\)
+        </p>
+        <img src="imgs/1.PNG" width="20%">
+        <h1 class="display-6">Solution</h1>
+        <p>
+        Big Will's mass is given by:
+        $$80 \text{ kg} \cdot \frac{1000 \text{ g}}{1\text{ kg}} \cdot \frac{1 \text{ CAD}}{6.27\text{ g}} = 12759 \text{ CAD}$$
+
+        The acceleration due to gravity is given by:
+        $$\frac{9.81 \text{ m}}{1\text{ s}^2} \cdot \frac{1 \text{ km}}{1000 \text{ m}} \cdot \frac{20 \text{ CAD}}{10\text{ km}}
+        \cdot \left( 
+        \frac{60\text{ s}}{1 \text{ min}} \cdot \frac{60 \text{ min}}{1 \text{ h}} \cdot \frac{24 \text{ h}}{1 \text{ day}} \cdot \frac{365 \text{ day}}{1\text{ y}} \cdot \frac{1 \text{ y}}{50000 \text{ CAD}}    
+        \right)^2 = 78049.8744 \text{ CAD}^{-1}
+        $$
+
+        Multiplying the two together gets us: \(12759\text{ CAD} \cdot 78049.8744 \text{ CAD}^{-1} = \boxed{\textbf{(E) } 9.96\times 10^5}\). Note that this is a dimensionless quantity.
+        </p>
+
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

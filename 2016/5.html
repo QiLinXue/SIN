@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 5 | 2016 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2016 SIN Problem 5</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="4.html">Previous</a> | <a href="6.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        Onkel Hans is enjoying a libration in the revolving restaurant in the CN tower. The restaurant is circular as shown, with a radius \(R_1=7\text{ m}\), rotating with a period of \(1\) rotation clockwise every \(5\) minutes. In order to increase the dizzying effect of the experience, Hans rigs his circular table (\(R_2=1\text{ m}\)) to also rotate, counterclocwise, with a period of one rotation every \(4\) minutes, relative to the floor of the restaurant, such that the center of Hans\ table is \(5\text{ m}\) away. If he begins his ride seated at the edge of his table, at position \((0,6)\) at time \(t=0\) as shown, what's his speed, relative to the origin, after \(3\) minutes have passed? Answer in \(\text{m/s}\). <br>
+        \(\textbf{(A) } 0.105 \qquad\textbf{(B) } 0.650 \qquad\textbf{(C) } 0.713 \qquad\textbf{(D) } 0.863 \qquad\textbf{(E) } 0.910\)
+        </p>
+        <img src="imgs/5.PNG" width="25%">
+        <h1 class="display-6">Solution 1</h1>
+        <p>
+        Let's first see if we can place an upper bound on the speed of the person. The speed of the center of the table is given by:
+
+        $$v = r\omega = (5)\left(\frac{2\pi}{300}\right) = 0.1047$$
+
+        and the speed of the person relative to the table is
+
+        $$v = r\omega = (1)\left(\frac{2\pi}{240}\right) = 0.0262$$
+
+        The maximum speed of the person relative to the origin is when these two velocities point in the same direcrtion in which case:
+
+        \begin{align*}
+        v_\text{person relative origin} &= v_\text{person relative table center} + v_\text{table center relative origin} \\
+        &= 0.0262+0.1047 \\
+        &=0.1309
+        \end{align*}
+
+        The only value that is below this maximum speed is \(\boxed{\textbf{(A) } 0.105}\)
+        </p>
+        
+
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

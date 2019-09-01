@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 6 | 2016 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2016 SIN Problem 6</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="5.html">Previous</a> | <a href="7.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        <br>
+        An Inuit hunter fashions a bola, hoping to capture a rare arctic dodo bird for dinner. She uses an elastic rope made from caribou hide to connect two small, heavy rocks of mass \(m_1=4\text{ kg}\) and \(m_2=6\text{ kg}\). The rocks are pulled apart, stretching the rope, which acts like a spring with constant \(k=10\text{ N/m}\). Arranging the rocks vertically as shown, she releases the system from rest. How much time elapses before the point masses first touch each other? Assume the elastic hide has negligible mass, and its unstretched length is zero. Answer in seconds.
+        \(\textbf{(A) } 0.769 \qquad\textbf{(B) } 1.539 \qquad\textbf{(C) } 2.101 \qquad\textbf{(D) } 2.432 \qquad\textbf{(E) } 3.078\)
+        </p>
+        <img src="imgs/6.PNG" width="5%">
+        <h1 class="display-6">Solution 1</h1>
+        <p>
+        First thing to realize is that the answer is independent of gravity. An explanation why is provided in Remarks. Thus, we can picture having this system on a horizontal frictionless table.
+
+        Next, since there are no external forces. The center of mass is constant. Letting the starting length of the string be \(1\text{ m}\) though it can be any number, the center of mass will always be $$x_{cm}=\frac{4(0)+6(1)}{10}=0.6$$
+        if we let the \(m_1\) be where \(x=0\). Thus when they collide, both masses should be at \(x=0.6\). <br><br>
+
+        As a result, you can think of the spring as two springs in series where the ends are connected at \(x=0.6\). Thus, the force \(m_1\) feels from a \(1 \text{ m}\) long spring with \(k=10\) is the same as the force from a \(0.6 \text{ m}\) long spring with \(k=k_1\). Setting these two equal to each other gives:
+        \begin{align*}
+        (10)(1) &= k_1(0.6) \\
+        k_1 &= 16.66
+        \end{align*}
+
+        We need to find out the time it takes for \(m_1\) to reach this point, which is a quarter of a period. The period of a spring is \(2\pi\sqrt{\frac{m}{k}}\) so a quarter of this is equal to: $$\frac{\pi}{2}\sqrt{\frac{4}{16.66}}=0.769$$
+
+        Therefore the answer is \(\boxed{\textbf{(A) } 0.769}\)
+        </p>
+
+        <h1 class="display-6">Solution 2</h1>
+        <p>
+        As always, my solution was simpler and easier to understand than the official solution which I will present now. Again, we can ignore gravity. There will be a point \(P\) on the spring that will remain stationary. Therefore, we can treat it as two springs in series:
+
+        $$\frac{1}{k}=\frac{1}{k_1}+\frac{1}{k_2}$$
+
+        The period of oscillation for both objects will be the same. Therefore, we have:
+
+        \begin{align*}
+        T_1 &= T_2 \\
+        2\pi\sqrt{\frac{m_1}{k_1}} &= 2\pi\sqrt{\frac{m_2}{k_2}} \\
+        m_1k_2 &= m_2k_1 \\
+        k_2 &= \frac{m_2k_1}{m_1}
+        \end{align*}
+
+        Plugging this into the "springs in series" equation gives
+        \begin{align*}
+        \frac{1}{k} &= \frac{1}{k_1} + \frac{m_1}{m_2k_2} \\
+        &= \frac{1}{k}\left[1+\frac{m_1}{m_2}\right] \\
+        &= \frac{1}{k}\left[\frac{m_1+m_2}{m_2}\right] \\
+        k_1 &= \frac{k(m_1+m_2)}{m_2}
+        \end{align*}
+
+        We can substitute this into our expression for \(T_1\) to get:
+        \begin{align*}
+          T_1 &= 2\pi\sqrt{\frac{m_1}{k_1}} \\
+          &= 2\pi\sqrt{\frac{m_1m_2}{k(m_1+m_2)}}
+        \end{align*}
+        The time taken for \(m_1\) to reach \(P\) is
+        $$T_1/4 = \frac{\pi}{2}\sqrt{\frac{m_1m_2}{k(m_1+m_2)}}$$
+        Substituting in the appropriate values give \(\boxed{\textbf{(A) } 0.769}\)
+        </p>
+
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+        <li>But <i>why</i> can you simply just "turn off" gravity? From an intuition standpoint, the two masses will always be feeling the same relative net force. If the net force of the top mass is increased by \(x\), then the net force of the bottom mass is also increased by \(x\). Mathematically, speaking we can write the \(F=ma\) equations for both the top and bottom mass
+        $$\begin{cases}
+        m_1a_1 &= kx_1 + mg \\
+        m_2a_2 &= -kx_2 + mg
+        \end{cases}$$
+        Subtracting the two equations give:
+        \begin{align*}
+          (m_1+m_2)(a_1 + a_2) &= k(x_1+x_2) \\
+        \end{align*}
+        Solving ths differential equation will give you generalized expressions for \(x_1(t)\) and \(x_2(t)\). Note that this differential equation will be exactly the same without the \(+mg\) term. Note: the above formula doesn't exactly yield the right solution but it is useful in building an intuition. For an in depth discussion, search up "coupled harmonic oscillators"
+        </li>
+        <li>
+        Here is another way to look at it, and we shall phrase it as an exercise. Let us determine the period of oscillations of a spring with constant \(k\) attached to a mass \(m\) hanging vertically from a wall. As you might suspect, the answer is $$T=2\pi \sqrt{\frac{k}{m}}$$ but let us see how we can derive this naturally. At the equilibrium point:
+        $$mg = kx_0$$
+        so the equilibrium length of the spring is \(L+x_0\) where \(L\) is the "natural length." Then, \(F=ma\) will yield
+        $$ma = k(x_0+x) - mg$$
+        but since \(mg = kx_0\) we have:
+        \begin{align*}
+        ma &= k(x_0+x) - kx_0 \\
+        ma &= kx
+        \end{align*}
+        yielding the original Hooke's Law expression. 
+        </li>
+        </ul>
+
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

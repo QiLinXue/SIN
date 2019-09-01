@@ -29,31 +29,50 @@
     <div class = "container">
         <h1 class="display-6">Question</h1>
         <p>
-        Onkel Hans is enjoying a libration in the revolving restaurant in the CN tower. The restaurant is circular as shown, with a radius \(R_1=7\text{ m}\), rotating with a period of \(1\) rotation clockwise every \(5\) minutes. In order to increase the dizzying effect of the experience, Hans rigs his circular table (\(R_2=1\text{ m}\)) to also rotate, counterclocwise, with a period of one rotation every \(4\) minutes, relative to the floor of the restaurant, such that the center of Hans\ table is \(5\text{ m}\) away. If he begins his ride seated at the edge of his table, at position \((0,6)\) at time \(t=0\) as shown, what's his speed, relative to the origin, after \(3\) minutes have passed? Answer in \(\text{m/s}\). <br>
+        Onkel Hans is enjoying a libration in the revolving restaurant in the CN tower. The restaurant is circular as shown, with a radius \(R_1=7\text{ m}\), rotating with a period of \(1\) rotation clockwise every \(5\) minutes. In order to increase the dizzying effect of the experience, Hans rigs his circular table (\(R_2=1\text{ m}\)) to also rotate, counterclocwise, with a period of one rotation every \(4\) minutes, relative to the floor of the restaurant, such that the center of Hans' table is \(5\text{ m}\) away. If he begins his ride seated at the edge of his table, at position \((0,6)\) at time \(t=0\) as shown, what's his speed, relative to the origin, after \(3\) minutes have passed? Answer in \(\text{m/s}\). <br>
         \(\textbf{(A) } 0.105 \qquad\textbf{(B) } 0.650 \qquad\textbf{(C) } 0.713 \qquad\textbf{(D) } 0.863 \qquad\textbf{(E) } 0.910\)
         </p>
         <img src="imgs/5.PNG" width="25%">
         <h1 class="display-6">Solution 1</h1>
         <p>
-        Let's first see if we can place an upper bound on the speed of the person. The speed of the center of the table is given by:
+        Let's first see if we can place an upper bound on the speed of the person. The speed of the restaurant at that point is given by:
 
-        $$v = r\omega = (5)\left(\frac{2\pi}{300}\right) = 0.1047$$
+        $$v = r\omega = \left(\sqrt{5^2+1^2}\right)\left(\frac{2\pi}{300}\right) = 0.1068$$
 
         and the speed of the person relative to the table is
 
         $$v = r\omega = (1)\left(\frac{2\pi}{240}\right) = 0.0262$$
 
-        The maximum speed of the person relative to the origin is when these two velocities point in the same direcrtion in which case:
+        The maximum speed of the person relative to the origin is when these two velocities point in the same direction in which case:
 
         \begin{align*}
-        v_\text{person relative origin} &= v_\text{person relative table center} + v_\text{table center relative origin} \\
-        &= 0.0262+0.1047 \\
-        &=0.1309
+        v_\text{person relative origin} &= v_\text{person relative restaurant} + v_\text{restaurant relative origin} \\
+        &= 0.0262+0.1068 \\
+        &=0.133
         \end{align*}
 
         The only value that is below this maximum speed is \(\boxed{\textbf{(A) } 0.105}\)
         </p>
+
+        <h1 class="display-6">Solution 2</h1>
+        Let's see if we can explicitly get the answer. After \(3\) minutes have passed, the center of the table would have gone \(\frac{3}{5}\) of a revolution around the restaurant or make an angle of \(216^\circ\). The person would have gone \(\frac{3}{4}\) of a revolution around the table or an angle of \(270^\circ\) with respect to the platform. See the following diagram.
+        <center><img src="imgs/5a.PNG" width="40%"></center>
         
+        where \(v_p\) is the velocity of the person relative to the table and \(v_o\) is the velocity of the restaurant at that point relative to the origin. The angle \(\alpha\) is given by \(\tan\alpha=\frac{1}{5}\) or \(\alpha=11.3^\circ\). Then, we can use the laws of cosine to determine \(v_f\) the velocity of the person relative to the origin.
+
+        <center><img src="imgs/5b.PNG" width="20%"></center>
+
+        \(v_p\) and \(v_o\) is given in the other solution to be \(0.0262\) and \(0.1068\) respectively. Therefore:
+
+        \begin{align*}
+        v_\text{person relative origin} &= v_\text{person relative restaurant} + v_\text{restaurant relative origin} \\
+        v_f^2 &= v_p^2 + v_o^2 - 2v_pv_o\cos(90-\alpha) \\
+              &= 0.0262^2 + (0.1068)^2 - 2(0.0262)(0.1068)\sin(11.3) \\
+              &= 0.010996\\
+        v_f &= 0.1049
+        \end{align*}
+
+        The answer is thus \(\boxed{\textbf{(A) }0.105}\)
 
     </div>
 </main>

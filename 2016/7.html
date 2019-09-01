@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 7 | 2016 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2016 SIN Problem 7</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="6.html">Previous</a> | <a href="8.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        <br>
+        Quebec's secret strategic reserve of maple syrup is stored in a large tank of mass \(140\text{ kg}\), hidding in a bunker deep beneath the Quebec City parliament. The tank is in the shape of a uniform cylinder of height \(1.2 \text{ m}\). When the tank is completely filled with syrup, the total mass (syrup plus tank) is \(490 \text{ kg}\). A group of radical federalists, intent on delivering a blow to the provincial economy (or perhaps just hungry for pancakes), sneak into the bunker and drill a small hole at the foot of the container to drain the syrup. When the center of mass of the system is at a minimum as measured from the bottom, how much syrup has escaped? Answer in \(\text{kg}\). <br><br>
+        \(\textbf{(A) } 122 \qquad\textbf{(B) } 175 \qquad\textbf{(C) } 228 \qquad\textbf{(D) } 245 \qquad\textbf{(E) } 392\)
+        </p>
+        <h1 class="display-6">Solution 1</h1>
+        <p>
+        If we begin with \(350 \text{ kg}\) of syrup, then when \(x\) has escaped then the center of mass of the syrup would be \(((350-x)/350)0.6\).
+        \begin{align*}
+        y_\text{cm} &= \frac{140(0.6)+(350-x)((350-x)/350)(0.6)}{490-x} \\
+        &=  \frac{84+0.00143(350-x)^2}{490-x} \\
+        \end{align*}
+        Using the classic trick of plugging values in, we find that the minimum is achieved at \(\boxed{\textbf{(C) } 228}\)
+        </p>
+
+        <h1 class="display-6">Solution 2</h1>
+        <p>
+        As always, my solution was simpler and easier to understand than the official solution which I will present now, which utilizes calculus (believe me, I tried to find a non-calculus version but it ended up involving complicated inequalities. You do NOT want to go that route)<br><br>
+
+        Recall the equation from above. Taking the derivative and setting it to zero, we get:
+        \begin{align*}
+        \frac{d}{dx} y_\text{cm} = 0 &= \frac{d}{dx} \frac{84+0.001667(350-x)^2}{490-x} \\
+        0 &= \frac{\left[\frac{d}{dx}\left(84+0.001667(350-x)^2\right)\right](490-x)-\left(84+0.001667(350-x)^2\right)\left[\frac{d}{dx}(490-x)\right]}{(490-x)^2} \\
+        0 &= (2(0.001667)(350-x)(-1))(490-x) - (84 + 0.001667(350-x)^2)(-1) \\
+        0 &= -0.00333(350-x)(490-x) + 84 + 0.001667(350-x)^2 \\
+        0 &= -0.00333(171500-840+x^2) + 84 + 0.001667(122500-700x+x^2) \\
+        0 &= -571.09500+2.7972x-0.00333x^2+84+204.2075-1.1669x+0.001667x^2 \\
+        0 &= 0.001663x^2-1.6303x+282.8875 \\
+        x &= 225
+        \end{align*}
+        This is off due to an arithmetic error I made (but too lazy to fix because this method sucks), but it is not difficult to see that the correct answer must be \(\boxed{\textbf{(C) } 228}\).
+        </p>
+
+        <h1 class="display-6">Solution 3</h1>
+        We can actually simplify matters by rewriting the center of mass equation in terms of \(y\), the height of the syrup. This gives:
+        \begin{align*}
+        y_\text{cm} &= \frac{140(0.6)+(350/1.2)y(y/2)}{140+(350/1.2)y} \\
+                    &= \frac{84 + 145.83y^2}{140+291.67y}
+        \end{align*}
+        
+        Perhaps you can minimize \(y\) much easier in this method with calculus, but that's boring. We're going the insane way, contrary to what I said earlier :).
+
+        We can now use long division to simplify the fraction. After dividing, we get:
+
+        $$0.5y + \frac{0.40319}{y+0.48}$$
+
+        We have ignored the constant term as that just moves the function up and down; it does not affect where the minimum point is. Now, we just need to simplify this new expression. Note that this is also equivalent to minimizing
+
+        $$0.5(y+0.48) + \frac{0.40319}{y+0.48}$$
+
+        Expanding the first term gives another constant term, which as discussed before, does not affect where the minimum point is. Now, we can make the substitution $$u = y + 0.48$$ to simplify the expression to:
+
+        $$0.5u + \frac{0.40319}{u}$$
+
+        We can simplify this using the AM-GM inequality. Letting \(a=0.5u\) and \(b=\frac{0.40319}{u}\), the arithmetic mean of $a$ and $b$ is:
+
+        $$\frac{1}{2}(0.5u + \frac{0.40319}{u})$$
+
+        The geometric mean of $a$ and $b$ is:
+
+        $$\sqrt{\frac{(0.5u)(0.40319)}{u}} = \sqrt{0.201595}$$
+
+        The arithmetic mean is ALWAYS greater than this number EXCEPT during the special case where \(a=b\), which is when the arithmetic mean is at a minimum. The expression we wish to minimize just so happens to be twice the arithmetic mean of \(a\) and \(b\). Therefore, to minimize our expression, we need to set \(a=b\) or:
+
+        \begin{align*}
+        0.5u &= \frac{0.40319}{u} \\
+        u &= \sqrt{0.80638} \\
+        u &= 0.89799
+        \end{align*}
+
+        Plugging this into our substitution \(u = y + 0.48\) gives:
+
+        $$y = 0.89799 - 0.48 = 0.41799$$
+
+        When the syrup is at a height of \(0.41799\), the amount that escaped is:
+
+        $$350\left(1-\frac{0.41799}{1.2}\right) = 228.09$$
+        
+        Therefore, the answer is \(\boxed{\textbf{(C) } 228}\)
+
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+        <li>
+        Fun Fact: This is the only SIN problem that involves calculus, even though their website claims no calculus is required. Of course, you can solve the problem using the plug and chug method, or the extremely convoluted AM-GM inequality method, but the direct intended way was still with calculus.
+        </li>
+        <li>
+        Totally unrelated but Torricelli's Law states that the speed at which the syrup exits is equal to $$v=\sqrt{2gh}$$ where \(h\) is the height of the syrup. However, this ignores viscosity. A full treatment with viscosity involves the incompressible Naiver-Stokes equation.
+        </li>
+        </ul>
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

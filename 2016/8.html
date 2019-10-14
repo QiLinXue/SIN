@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 8 | 2016 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2016 SIN Problem 8</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="7.html">Previous</a> | <a href="9.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        <br>
+        Santa Clauski is delivering Christmas presents to the children of Venice. A Venice house has a roof that slopes at \(60^\circ\) as shown, with its lowest edge above the water of a channel. As Santa exits the chimney, he is unaware that some misguided citizen has coated the roof in frictionless snow to make him feel at home. He starts to slide down the roof, travelling \(3.77 \text{ m}\) to the lower edge. At that instant, frightened for his life, Santa jumps with a speed of \(6.0 \text{ m/s}\) at an angle of \(90^\circ\) relative to the rooftop. If the roof edge is \(10.06 \text{ m}\) above the channel, how far from the house does Santa splash land? Answer in meters.
+        <br><br>
+        \(\textbf{(A) } 4.00 \qquad\textbf{(B) } 7.60 \qquad\textbf{(C) } 8.75 \qquad\textbf{(D) } 10.4 \qquad\textbf{(E) } 12.2\)
+        </p>
+        <img src="imgs/8.PNG" width="20%">
+        <h1 class="display-6">Solution 1</h1>
+        <p>
+        First, we need to determine the speed of Santa right before he jumps. Conservation of energy tells us that:
+        \begin{align*}
+        mg(3.77\sin 60^\circ) &= \frac{1}{2}mv^2 \\
+        v &= \sqrt{2(9.8)(3.77\sin 60^\circ)} \\
+        v &= 7.9995 \text{ m/s}
+        \end{align*}
+        
+        Now, we determine the velocity immediately after Santa jumps from the roof. Since the two velocities are orthogonal to each other, we know the speed is:
+
+        $$|v_f| = \sqrt{7.995^2+6^2} = 10 \text{ m/s}$$
+        
+        We now need to determine the angle \(\theta\) below the horizontal the initial velocity vector makes. Using the two velocity vectors we have:
+
+        \begin{align*}
+        \tan(30+\theta) &= \frac{8}{6} \\
+        \theta &= 23.13^\circ
+        \end{align*}
+
+        Thus, the downwards initial velocity is (setting downwards to be positive):
+
+        $$v_{i,y} = 10\sin(23.13^\circ) = 3.928 \text{ m/s}$$
+
+        and the horizontal initial velocity is:
+
+        $$v_{i,x} = 10\cos(23.13^\circ) = 9.196 \text{ m/s}$$
+
+        Using kinematics, we can determine the time of flight:
+
+        \begin{align*}
+        10.06 &= 3.928t + 4.9t^2 \\
+        t &= 1.087 \text{ s}
+        \end{align*}
+
+        which can be used to determine the horizontal range:
+        \begin{align*}
+        d &= v_{i,x}t  \\
+        &= (9.196)(1.087) \\
+        &= 9.996 \text{ m} = \boxed{\textbf{(A) } 10.04 \text{ m}}
+        \end{align*}
+        </p>
+
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+        <li>
+        Instead of using the velocity addition formula, we can instead just add and subtract the horizontal and vertical components of \(v_1\) and \(v_2\), which become scalars, making it much easier to analyze.
+        </li>
+        </ul>
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

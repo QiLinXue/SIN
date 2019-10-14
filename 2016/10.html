@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 10 | 2016 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2016 SIN Problem 10</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="9.html">Previous</a> | <a href="11.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        <br>
+        Fed up with the NHL, the Toronto Maple Laughs invent a new air hockey game. A circular air table of radius \(R=1 \text{ m}\) has two pucks of mass \(m_1=150 \text{ g}\) and \(m_2 = 100 \text{ g}\) positioned such that their center of masses are a distance of \(82.7 \text{ cm}\) apart. A string attaching the two masses is passed around a frictionless pin at the center of the table, which is rotated so that a point on its circumfrence has tangential velocity \(v=6.285 \text{ m/s}\). When the air is turned on, making the table frictionless, it is noticed that the masses remain fixed relative to the table. What tension will the Maple Laugh's captain measure in the string at that instant? Answer in N.
+        <br><br>
+        \(\textbf{(A) } 1.58 \qquad\textbf{(B) } 2.37 \qquad\textbf{(C) } 3.55 \qquad\textbf{(D) } 3.95 \qquad\textbf{(E) } 5.92 \)
+        </p>
+        <img src="imgs/10.PNG" width="20%">
+        <h1 class="display-6">Solution 1</h1>
+        <p>
+        First, determine the angular frequency \(\omega\) to be:
+        
+        $$ \omega = \frac{v}{R} = \frac{6.285}{1} = 6.285 \text{ rad/s} $$
+        
+        If the distances betweeen the masses and the center of the table are \(r_1\) and \(r_2\), respectively, Newton's Second Law on the two masses give:
+        \begin{align*}
+          T &= m_1\omega^2r_1 \\
+          T &= m_2\omega^2r_2
+        \end{align*}
+        The trick is to determine \(r_1\) or \(r_2\) using the above ratio (since tension is constant) and the fact that the angle these two make is \(110^\circ\) and that the two masses are a distance \(110^\circ\) away. First, using the above two expressions for tension, we have:
+        $$r_2 = \frac{m_1}{m_2} r_1 = 1.5r_1$$
+
+        Then, the cosine law gives:
+        \begin{align*}
+        0.827^2 &= r_1^2 + r_2^2 - 2r_1r_2\cos(110^\circ) \\
+        0.683929 &= r_1^2 + 2.25r_2^2 + 1.026 r_2^2 \\
+        0.683929 &= 4.526r_1^2 \\
+        0.151111136 &= r_1^2 \\
+        r_1 &= 0.388730158 \text{ m} \\
+        \end{align*}
+
+        Plugging this in gives:
+
+        $$ T = (0.15)(6.285^2)(0.389) = 2.31 \text{ N} $$
+
+        or \(\boxed{\textbf{ (B)} 2.37}\)
+        </p>
+
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>

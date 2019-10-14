@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styling/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title>Problem 9 | 2016 SIN</title>
+  </head>
+  <body>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">2016 SIN Problem 9</h1>
+            <p class="lead"><a href="index.html">List Problems</a> | <a href="../">Other Years</a><br>
+            <a href="8.html">Previous</a> | <a href="10.html">Next</a></p>
+        </div>
+    </div>
+
+    <div class = "container">
+        <h1 class="display-6">Question</h1>
+        <p>
+        <br>
+        While at rest in a Colorado bud-and- breakfast, Chong shines a laser beam that strikes a mirror at an angle of incidence of \(45^\circ\). After reflection, the ray travels towards Cheech, where it passes through his crystal necklace, which is a prism of index \(1.50\), with apex angle of \(4^\circ\) as shown. Through what angle must the mirror be rotated if the total deviation of the ray is to be \(90^\circ\)? Answer in degrees. Hint: First, find the relationship between index of refraction and the minimum angle of deviation for a given apex angle. The minimum angle of deviation occurs when the first refracted ray is parallel to the base of the prism. Use the approximation \(\sin\theta \approx \theta\).
+        <br><br>
+        \(\textbf{(A) } 0.500 \qquad\textbf{(B) } 1.00 \qquad\textbf{(C) } 2.00 \qquad\textbf{(D) } 4.00 \qquad\textbf{(E) } 4.50 \)
+        </p>
+        <img src="imgs/9.PNG" width="20%">
+        <h1 class="display-6">Solution 1</h1>
+        <p>
+        To be honest. I have no fucking clue what the so called "hint" is hinting about. I can't even follow the official solution so unfortunately I can't write it out here. However, my solution is much much simpler (as always).
+        
+        Just consider what happens when you reverse the trajectory of the ray. Shine the ray from the bottom of the page directly upwards. When it passes into the prism, the angle doesn't change since it's directly orthogonal to it. When it passes out of the prism, the initial angle it makes with the normal line is \(4^\circ\). Using Snell's Law, the final angle it makes with the normal line is given by:
+        \begin{align*}
+        n_1\sin\theta_1 &= n_2\sin\theta_2 \\
+        1.5\sin(4^\circ) &= \sin\theta_2 \\
+        \theta_2 &= 6.006^\circ
+        \end{align*}
+        The angle the normal line makes with the horizontal is \(90-4=86^\circ\) so the angle the exiting ray makes with the horizontal is \(92^\circ\). We can take this one step further and say the angle the exiting ray makes with the vertical is \(2^\circ\). <br><br>
+
+        Next this ray comes into contact with the mirror such that the reflected ray is perfectly horizontal. If the incoming ray makes an angle \(\theta\) with the mirror, then the exiting ray must also make an an angle \(\theta\) with the mirror. Note that because the exiting ray is horizontal, the angle the mirror makes with the horizontal is also \(\theta\). <br><br>
+        <center>
+        <img src="imgs/9a.PNG" width="50%">
+        </center>
+        We just have to determine this angle \(\theta\) now. Note that the angle the vertical makes with the mirror is \(90+\theta\) so we have a triangle whose angles add up to \(180^\circ\):
+
+        \begin{align*}
+        2^\circ + \theta + 90^\circ + \theta &= 180^\circ \\
+        2\theta &= 88^\circ \\
+        \theta &= 44^\circ
+        \end{align*}
+
+        The original angle was \(45^\circ\) so the angle of deviation is \(\boxed{\textbf{(B) } 1.00^\circ }\)
+        </p>
+
+        <h1 class="display-6">Remarks</h1>
+        <ul>
+        <li>
+        Here is another way to show how the angle the mirror must be rotated is exactly half of the angle the incoming ray makes with the vertical. Consider the geometric setup where a vertical ray hits a mirror inclined at an angle of \(45^\circ\) and the exiting ray is perfectly horizontal. The angle the vertical ray makes with the mirror is \(45^\circ\). The angle the horizontal ray makes with the mirror is also \(45^\circ\). Then if this incoming ray is deflected an angle of \(\theta\), the mirror must rotate an angle \(\alpha\). For each \(\alpha\) it rotates, the angle between the mirror and the vertical ray will become by \(90-\alpha\) while the angle between the mirror and the horizontal ray will become by \(90+\alpha\) such that the total angle change is \(2\alpha\). Thus, we can set:
+        $$\theta = 2\alpha$$
+        to see why the angle the vertical ray deviates is double the angle the mirror needs to be rotated.
+        </li>
+        </ul>
+    </div>
+</main>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>
